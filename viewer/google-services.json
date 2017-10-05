@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "541718180800",
+    "firebase_url": "https://icecreamshop-cf7df.firebaseio.com",
+    "project_id": "icecreamshop-cf7df",
+    "storage_bucket": "icecreamshop-cf7df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541718180800:android:b1188dc229c229a6",
+        "android_client_info": {
+          "package_name": "com.icecreamshop.creator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541718180800-l7i2183o0ouoioucvo53gudvvciu5cdi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.icecreamshop.creator",
+            "certificate_hash": "19631fd54dbafb4c59eb2a5108227a7aac7a88e1"
+          }
+        },
+        {
+          "client_id": "541718180800-b5aqc245amne656dbeovu6e9aej1326h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaZ2-_DTQKUjIN3HjfJZZHcmU2MEeMviE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541718180800-b5aqc245amne656dbeovu6e9aej1326h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541718180800:android:ce254a943fc454aa",
+        "android_client_info": {
+          "package_name": "com.icecreamshop.viewer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541718180800-cg5guj1k2eflnspaiq5v5ob8nko4vdgo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.icecreamshop.viewer",
+            "certificate_hash": "19631fd54dbafb4c59eb2a5108227a7aac7a88e1"
+          }
+        },
+        {
+          "client_id": "541718180800-b5aqc245amne656dbeovu6e9aej1326h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaZ2-_DTQKUjIN3HjfJZZHcmU2MEeMviE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541718180800-b5aqc245amne656dbeovu6e9aej1326h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

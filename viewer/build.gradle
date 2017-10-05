@@ -49,6 +49,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$supportVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
 
+    implementation "com.google.firebase:firebase-database:$firebaseVersion"
+
     implementation("com.jakewharton:butterknife:$butterknifeVersion", {
         exclude module: 'support-annotations'
         exclude module: 'support-compat'

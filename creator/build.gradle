@@ -31,7 +31,7 @@ android {
     }
 
     buildTypes {
-        debug{
+        debug {
             signingConfig signingConfigs.debug
         }
         release {
@@ -49,6 +49,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$supportVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
 
+    implementation "com.google.firebase:firebase-database:$firebaseVersion"
+
     implementation("com.jakewharton:butterknife:$butterknifeVersion", {
         exclude module: 'support-annotations'
         exclude module: 'support-compat'
@@ -57,8 +59,13 @@ dependencies {
         exclude module: 'support-annotations'
     })
 
+    implementation "io.reactivex:rxjava:$rxJavaVersion"
+    implementation "io.reactivex:rxandroid:$rxAndroidVersion"
+
     testImplementation "junit:junit:$jUnitVersion"
     androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoVersion", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 }
+
+apply plugin: 'com.google.gms.google-services'
