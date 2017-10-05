@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">IceCreamCreator</string>
+
+    <string name="add_hint_name">name</string>
+    <string name="add_hint_weight">weight</string>
+    <string name="add_hint_color">color</string>
+    <string name="add_hint_flavor">flavor</string>
+    <string name="add_hint_temperature">temperature</string>
+
+    <string name="add_btn_save">Save</string>
+</resources>

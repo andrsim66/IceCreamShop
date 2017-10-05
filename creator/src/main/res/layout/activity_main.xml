@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.icecreamshop.creator.MainActivity">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_hint_name"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+        app:layout_constraintRight_toLeftOf="@+id/gl_end"
+        app:layout_constraintTop_toTopOf="@+id/gl_top" />
+
+    <EditText
+        android:id="@+id/et_weight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_hint_weight"
+        android:inputType="number"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+        app:layout_constraintRight_toLeftOf="@+id/gl_end"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_hint_color"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+        app:layout_constraintRight_toLeftOf="@+id/gl_end"
+        app:layout_constraintTop_toBottomOf="@+id/et_weight" />
+
+    <EditText
+        android:id="@+id/et_flavor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_hint_flavor"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+        app:layout_constraintRight_toLeftOf="@+id/gl_end"
+        app:layout_constraintTop_toBottomOf="@+id/et_color" />
+
+    <EditText
+        android:id="@+id/et_temperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/add_hint_temperature"
+        android:inputType="numberSigned"
+        android:maxLines="1"
+        app:layout_constraintLeft_toLeftOf="@+id/gl_start"
+        app:layout_constraintRight_toLeftOf="@+id/gl_end"
+        app:layout_constraintTop_toBottomOf="@+id/et_flavor" />
+
+    <Button
+        android:id="@+id/b_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_btn_save"
+        app:layout_constraintBottom_toTopOf="@+id/gl_bottom"
+        app:layout_constraintRight_toLeftOf="@+id/gl_end" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/size_16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/size_16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/size_16" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/size_16" />
+
+</android.support.constraint.ConstraintLayout>
