@@ -19,20 +19,15 @@ import rx.schedulers.Schedulers;
 
 public class SaveIceCreamUseCase {
 
-    private IceCreamRepository repository;
+    private final IceCreamRepository repository;
 
-    private OnSuccessListener<Void> onSuccessListener;
-    private OnFailureListener onFailureListener;
-
-    public SaveIceCreamUseCase(@NonNull OnSuccessListener<Void> onSuccessListener,
-                               @NonNull OnFailureListener onFailureListener) {
-        this.onSuccessListener = onSuccessListener;
-        this.onFailureListener = onFailureListener;
-
-        this.repository = new IceCreamRepository();
+    public SaveIceCreamUseCase(IceCreamRepository repository) {
+        this.repository = repository;
     }
 
-    public void saveIceCream(IceCream iceCream) {
+    public void saveIceCream(IceCream iceCream,
+                             @NonNull final OnSuccessListener<Void> onSuccessListener,
+                             @NonNull final OnFailureListener onFailureListener) {
         repository.addIceCream(iceCream)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())

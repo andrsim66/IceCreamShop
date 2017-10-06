@@ -19,7 +19,11 @@ import rx.functions.Func1;
 
 public class IceCreamRepository {
 
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private final FirebaseDatabase database;
+
+    public IceCreamRepository(FirebaseDatabase database) {
+        this.database = database;
+    }
 
     public Observable<Void> addIceCream(IceCream iceCream) {
         final DatabaseReference myRef = database.getReference("ice-creams");

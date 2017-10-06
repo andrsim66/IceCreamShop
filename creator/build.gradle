@@ -62,6 +62,10 @@ dependencies {
     implementation "io.reactivex:rxjava:$rxJavaVersion"
     implementation "io.reactivex:rxandroid:$rxAndroidVersion"
 
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
+    provided "javax.annotation:jsr250-api:$jsrVersion"
+    implementation "com.google.dagger:dagger:$dagger2Version"
+
     testImplementation "junit:junit:$jUnitVersion"
     androidTestImplementation("com.android.support.test.espresso:espresso-core:$espressoVersion", {
         exclude group: 'com.android.support', module: 'support-annotations'

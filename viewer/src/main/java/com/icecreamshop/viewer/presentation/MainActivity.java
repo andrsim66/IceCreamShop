@@ -1,33 +1,35 @@
-package com.icecreamshop.creator.presentation;
+package com.icecreamshop.viewer.presentation;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.EditText;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.icecreamshop.creator.App;
-import com.icecreamshop.creator.R;
-import com.icecreamshop.creator.di.components.DaggerActivityComponent;
-import com.icecreamshop.creator.di.modules.ActivityModule;
+import com.icecreamshop.viewer.App;
+import com.icecreamshop.viewer.R;
+import com.icecreamshop.viewer.di.compontents.DaggerActivityComponent;
+import com.icecreamshop.viewer.di.modules.ActivityModule;
+import com.icecreamshop.viewer.model.IceCream;
+import com.icecreamshop.viewer.presentation.adapter.IceCreamListAdapter;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements AddIceCreamView {
+public class MainActivity extends AppCompatActivity implements ListIceCreamView {
 
-    @BindView(R.id.et_name) EditText etName;
-    @BindView(R.id.et_weight) EditText etWeight;
-    @BindView(R.id.et_color) EditText etColor;
-    @BindView(R.id.et_flavor) EditText etFlavor;
-    @BindView(R.id.et_temperature) EditText etTemperature;
+    @BindView(R.id.rv_ice_creams) RecyclerView rvIceCreams;
 
     private ProgressDialog progress;
 
-    @Inject AddIceCreamPresenter presenter;
+    @Inject ListIceCreamPresenter presenter;
+
+    private IceCreamListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,27 +62,18 @@ public class MainActivity extends AppCompatActivity implements AddIceCreamView {
     }
 
     @Override
-    public void resetViews() {
-        etName.setText("");
-        etWeight.setText("");
-        etColor.setText("");
-        etFlavor.setText("");
-        etTemperature.setText("");
+    public void showIceCreams(List<IceCream> iceCreams) {
+        adapter.setIceCreams(iceCreams);
+    }
+
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showError(String message) {
-        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    @OnClick(R.id.b_save)
-    void onSaveClick() {
-        presenter.saveClick(
-                etName.getText().toString(),
-                etWeight.getText().toString(),
-                etColor.getText().toString(),
-                etFlavor.getText().toString(),
-                etTemperature.getText().toString());
+        showMessage(message);
     }
 
     private void init() {
@@ -88,9 +81,18 @@ public class MainActivity extends AppCompatActivity implements AddIceCreamView {
         progress.setCancelable(false);
         progress.setIndeterminate(true);
 
+        LinearLayoutManager categoriesLayoutManager =
+                new LinearLayoutManager(MainActivity.this);
+        rvIceCreams.setLayoutManager(categoriesLayoutManager);
+
+        adapter = new IceCreamListAdapter(MainActivity.this);
+        rvIceCreams.setAdapter(adapter);
+
         DaggerActivityComponent.builder()
                 .appComponent(App.getAppComponent())
                 .activityModule(new ActivityModule(MainActivity.this))
                 .build().inject(MainActivity.this);
+
+        presenter.loadIceCreams();
     }
 }

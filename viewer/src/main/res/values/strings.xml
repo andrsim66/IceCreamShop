@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IceCreamViewer</string>
+
+    <string name="list_hint_name">Name</string>
+    <string name="list_hint_color">Color</string>
+    <string name="list_hint_flavor">Flavor</string>
+    <string name="list_hint_temperature">0</string>
 </resources>

@@ -20,10 +20,10 @@ public class AddIceCreamPresenter implements OnFailureListener, OnSuccessListene
     private AddIceCreamView view;
     private SaveIceCreamUseCase useCase;
 
-    public AddIceCreamPresenter(@NonNull AddIceCreamView view) {
+    public AddIceCreamPresenter(@NonNull AddIceCreamView view,
+                                @NonNull SaveIceCreamUseCase useCase) {
         this.view = view;
-        this.useCase = new SaveIceCreamUseCase(AddIceCreamPresenter.this,
-                AddIceCreamPresenter.this);
+        this.useCase = useCase;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class AddIceCreamPresenter implements OnFailureListener, OnSuccessListene
             iceCream.setFlavor(flavor);
             iceCream.setTemperature(Integer.parseInt(temperature));
 
-            useCase.saveIceCream(iceCream);
+            useCase.saveIceCream(iceCream, this, this);
         } else {
             view.hideProgress();
             view.showError("Enter all fields");
